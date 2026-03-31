@@ -1,0 +1,32 @@
+# Power BI Bot Configuration
+
+# Claude API
+claude:
+  model: claude-opus-4
+  max_tokens: 4096
+  temperature: 0.7
+
+# Power BI Connection
+powerbi:
+  auto_detect_port: true
+  default_port: 0  # 0 = auto-detect
+  connection_timeout: 5
+
+# Chat Settings
+chat:
+  max_history: 50
+  show_timestamps: true
+  require_confirmation_for_changes: true
+
+# Logging
+logging:
+  level: INFO
+  rotation: "1 day"
+  retention: "7 days"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
+
+# Streamlit
+streamlit:
+  server_port: 8501
+  server_address: localhost
+  theme: light
