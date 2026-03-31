@@ -1,0 +1,139 @@
+============================================================
+YPF BI MONITOR - LISTO PARA SUBIR A GITHUB
+============================================================
+Fecha: 31-Mar-2026
+Ubicacion: C:\Users\SE46958\1 - Claude - Proyecto viz\ypf_bi_monitor
+============================================================
+
+TOTAL: 187 archivos
+Tamano aprox: 25-30 MB (sin venv)
+
+============================================================
+CONTENIDO POR CARPETA
+============================================================
+
+[+] apps/                    16 archivos
+    - 7 aplicaciones Streamlit (UI)
+    - 1 __init__.py
+
+[+] apps_core/              149 archivos
+    - analyzer_core/ (4 archivos)
+    - bot_core/ (7 archivos)
+    - dax_core/ (6 archivos)
+    - docgen_core/ (130 archivos)
+    - layout_core/ (3 archivos - incluye shared_styles.py)
+
+[+] shared/                   5 archivos
+    - usage_logger.py
+    - components.py
+    - __init__.py
+
+[+] config/                   2 archivos
+    - analyzer_thresholds.yaml
+    - __init__.py
+
+[+] assets/                   1 archivo
+    - logo_ypf.png
+
+[+] templates/                1 archivo
+    - docgen/plantilla_corporativa_ypf.docx
+
+[+] .streamlit/               1 archivo
+    - config.toml (tema YPF)
+
+[+] Raiz/                    12 archivos
+    - README.md (principal)
+    - INSTALL.md (paso a paso)
+    - PROXY_SETUP.md (referencia proxy)
+    - GITHUB_UPLOAD_SUMMARY.md (resumen detallado)
+    - .gitignore
+    - .env.example
+    - requirements.txt
+    - main.py
+    - run_app.bat
+    - run_app.sh
+    - create_desktop_shortcut.ps1
+    - test_imports.py
+
+============================================================
+ARCHIVOS EXCLUIDOS (NO SE SUBEN)
+============================================================
+
+✓ venv/ - Entorno virtual (se recrea con pip install)
+✓ __pycache__/ - Cache Python
+✓ logs/ - Logs generados
+✓ .env - Passwords/secrets
+✓ *.pyc - Bytecode
+
+(Todos ya eliminados de esta carpeta)
+
+============================================================
+VERIFICACION DE SEGURIDAD
+============================================================
+
+✓ Sin credenciales hardcodeadas
+✓ .env excluido (passwords solo via variable entorno)
+✓ Logs excluidos
+✓ Template Word sin datos sensibles
+✓ .gitignore configurado correctamente
+
+============================================================
+DOCUMENTACION PARA USUARIOS
+============================================================
+
+README.md (13 KB)
+- 2 rutas de instalacion (con/sin proxy)
+- Troubleshooting completo
+- Guia de uso de cada herramienta
+
+INSTALL.md (7 KB)
+- Paso a paso ultra-detallado
+- Para usuarios no tecnicos
+- Con explicaciones conceptuales
+
+PROXY_SETUP.md (2 KB)
+- Referencia rapida comandos proxy
+- Para red corporativa YPF
+- Imprimible
+
+GITHUB_UPLOAD_SUMMARY.md (6 KB)
+- Resumen tecnico completo
+- Lista de archivos
+- Instrucciones para mantenedores
+
+============================================================
+SIGUIENTE PASO: SUBIR A GITHUB
+============================================================
+
+Opcion A - Interfaz Web GitHub:
+1. Crear repo en github.com
+2. Subir via "Upload files" (arrastrar carpeta completa)
+
+Opcion B - Git Command Line:
+1. cd "C:\Users\SE46958\1 - Claude - Proyecto viz\ypf_bi_monitor"
+2. git init
+3. git add .
+4. git commit -m "Initial commit: YPF BI Monitor v1.0"
+5. git remote add origin https://github.com/tu-usuario/ypf-bi-monitor.git
+6. git push -u origin main
+
+Opcion C - Subir por partes (ver GITHUB_UPLOAD_SUMMARY.md)
+
+============================================================
+BACKUP
+============================================================
+
+Backup de version anterior creado en:
+C:\Users\SE46958\1 - Claude - Proyecto viz\ypf_bi_monitor_backup
+
+(Por si necesitas recuperar algo)
+
+============================================================
+CONTACTO
+============================================================
+
+Desarrollado por: IT Analytics Team - YPF S.A.
+Version: 1.0
+Fecha: Marzo 2026
+
+============================================================

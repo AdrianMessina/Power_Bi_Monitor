@@ -1,0 +1,44 @@
+# ============================================================
+# YPF BI Monitor Suite - Dependencias
+# ============================================================
+# Python 3.10+ requerido (probado con 3.13)
+#
+# Instalacion:
+#   pip install -r requirements.txt
+#
+# Si hay errores con weasyprint en Windows, ver README.md
+# ============================================================
+
+# --- Framework Web ---
+streamlit>=1.31.0
+
+# --- Procesamiento de Datos ---
+pandas>=2.1.4
+numpy>=1.26.4
+
+# --- Visualizacion ---
+plotly>=5.18.0
+networkx>=3.0
+
+# --- Generacion de Documentos Word ---
+python-docx>=1.1.0
+
+# --- Generacion de Reportes PDF/HTML (Power BI Analyzer) ---
+weasyprint>=61.2
+jinja2>=3.1.4
+
+# --- Logging ---
+loguru>=0.7.0
+
+# --- Configuracion ---
+pyyaml>=6.0.1
+
+# --- HTTP (para animaciones Lottie opcionales) ---
+requests>=2.27.0
+
+# --- Consola (colores en logs) ---
+colorama>=0.4.6
+
+# --- Extensiones Streamlit (opcionales, la app funciona sin ellas) ---
+streamlit-extras>=0.3.0
+streamlit-lottie>=0.0.5

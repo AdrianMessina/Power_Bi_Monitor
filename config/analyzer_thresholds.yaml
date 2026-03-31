@@ -1,0 +1,126 @@
+# Configuración de umbrales para análisis de reportes Power BI
+# Basado en: https://learn.microsoft.com/es-es/power-bi/guidance/power-bi-optimization
+
+version: "1.0"
+
+# Umbrales por métrica (verde, amarillo, rojo)
+thresholds:
+  visualizations_per_page:
+    good: 10
+    warning: 15
+    critical: 20
+    description: "Número de visualizaciones por página"
+    recommendation: "Limitar a 10 visuales por página para mejor rendimiento"
+
+  filters_per_page:
+    good: 5
+    warning: 8
+    critical: 12
+    description: "Número de filtros por página"
+    recommendation: "Usar máximo 5 filtros por página, considerar jerarquías"
+
+  custom_visuals:
+    good: 3
+    warning: 5
+    critical: 8
+    description: "Número de custom visuals en el reporte"
+    recommendation: "Los custom visuals pueden impactar rendimiento, usar solo cuando sea necesario"
+
+  embedded_images_mb:
+    good: 1.0
+    warning: 5.0
+    critical: 10.0
+    description: "Tamaño total de imágenes embebidas (MB)"
+    recommendation: "Usar imágenes externas o comprimidas, evitar imágenes de alta resolución"
+
+  total_pages:
+    good: 10
+    warning: 20
+    critical: 30
+    description: "Número total de páginas en el reporte"
+    recommendation: "Dividir reportes grandes en múltiples archivos o usar bookmarks"
+
+  dax_measures_complex:
+    good: 20
+    warning: 40
+    critical: 60
+    description: "Número de medidas DAX complejas"
+    recommendation: "Optimizar medidas complejas, evitar iteradores innecesarios"
+
+  tables_in_model:
+    good: 15
+    warning: 30
+    critical: 50
+    description: "Número de tablas en el modelo"
+    recommendation: "Consolidar tablas cuando sea posible, usar vistas en la fuente"
+
+  relationships:
+    good: 20
+    warning: 40
+    critical: 60
+    description: "Número de relaciones en el modelo"
+    recommendation: "Simplificar el modelo, evitar relaciones bidireccionales innecesarias"
+
+  bidirectional_relationships:
+    good: 0
+    warning: 2
+    critical: 5
+    description: "Número de relaciones bidireccionales"
+    recommendation: "Evitar relaciones bidireccionales, usar CROSSFILTER() en medidas específicas"
+
+  calculated_columns:
+    good: 10
+    warning: 20
+    critical: 50
+    description: "Número de columnas calculadas"
+    recommendation: "Mover cálculos a Power Query o usar medidas cuando sea posible"
+
+  model_size_mb:
+    good: 500
+    warning: 1000
+    critical: 2000
+    description: "Tamaño del modelo en MB"
+    recommendation: "Optimizar modelo, eliminar columnas no usadas, revisar cardinalidad"
+
+# Pesos para scoring general (0-100)
+weights:
+  visualizations_per_page: 0.12
+  filters_per_page: 0.12
+  custom_visuals: 0.08
+  embedded_images_mb: 0.12
+  total_pages: 0.08
+  dax_measures_complex: 0.18
+  tables_in_model: 0.10
+  relationships: 0.05
+  bidirectional_relationships: 0.08
+  calculated_columns: 0.04
+  model_size_mb: 0.03
+
+# Categorías de scoring
+scoring:
+  excellent: 90
+  good: 75
+  warning: 60
+  poor: 0
+
+# Reglas adicionales
+rules:
+  - id: "avoid_bidirectional"
+    name: "Evitar relaciones bidireccionales"
+    severity: "warning"
+    description: "Las relaciones bidireccionales pueden causar ambigüedad y afectar rendimiento"
+
+  - id: "use_star_schema"
+    name: "Preferir esquema estrella"
+    severity: "info"
+    description: "El esquema estrella es más eficiente que esquemas de copo de nieve complejos"
+
+  - id: "limit_calculated_columns"
+    name: "Limitar columnas calculadas"
+    severity: "warning"
+    description: "Preferir medidas sobre columnas calculadas cuando sea posible"
+
+  - id: "optimize_visual_interactions"
+    name: "Optimizar interacciones visuales"
+    severity: "info"
+    description: "Deshabilitar interacciones innecesarias entre visuales"
