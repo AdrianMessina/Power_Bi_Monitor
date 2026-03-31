@@ -1,1 +1,1 @@
-# YPF BI Monitor - Apps Core Package
+# Documentation Generator Core Package
